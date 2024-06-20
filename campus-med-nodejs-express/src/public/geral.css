@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    background: #151515;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+
+    display: flex;
+    justify-content: center;
+}
+p, label, input, textarea{
+    font-size: 16px;
+}
+
+input[type="button"]{
+    background: #4294A6;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    font-size: 20px;
+   
+    padding: 6px 12px;
+    align-self: center;
+}input[type="button"]:hover{
+    background: #397784;
+    cursor: pointer;
+}input[type="button"]:active{
+    background: #6EB0BE;
+}
+
+.no-border{
+    border: none;
+}
+
+.align-center{
+    align-items: center;
+}

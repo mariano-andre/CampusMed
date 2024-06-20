@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Atendimento</title>
+    <link rel="stylesheet" href="../geral.css">
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="perfil-status">
+            <div class="perfil-img">
+                <div class="status-outer">
+                    <div class="status-inner"></div>
+                </div>
+            </div>
+        </div>
+
+        <h1>Nome do Médico</h1>
+
+        <div class="menu-status">
+            <div class="status-select">
+                <p>Status:</p>
+                <select id="selStatus">
+                    <option value="disponivel">Disponível</option>
+                    <option value="em atendimento">Em atendimento</option>
+                    <option value="volto logo">Volto logo</option>
+                    <option value="fim do expediente">Fim do expediente</option>
+                </select>
+            </div>
+            <input type="button" value="Salvar" id="btSalvarStatus">
+        </div>
+    </div>
+
+
+    <div class="cadastro">
+        <h1>Cadastrar novo atendimento</h1>
+
+        <div class="formulario">
+            <div class="componente-cadastro align-center">
+                <p>Horário do atendimento:</p>
+                <div class="horario align-center">
+                    <input type="time" id="timeInicioAtendimento">
+                    <label for="timeFimAtendimento">até</label>
+                    <input type="time" id="timeFimAtendimento">
+                </div>
+            </div>
+            <div class="componente-cadastro">            
+                <label for="inNomeAluno">Nome do Aluno:</label>
+                <input type="text" id="inNomeAluno" placeholder="Insira o nome...">
+            </div>  
+            <div class="componente-cadastro">            
+                <label for="inMatriculaAluno">Matrícula do Aluno:</label>
+                <input type="text" id="inMatriculaAluno" placeholder="Insira a matrícula...">
+            </div>  
+            <div class="componente-cadastro">            
+                <label for="inHDA">Histórico da doença atual:</label>
+                <textarea id="inHDA" cols="30" rows="10" placeholder="HDA..."></textarea>
+            </div>
+            <div class="componente-cadastro no-border">            
+                <label for="inTratamento">Tratamento:</label>
+                <textarea id="inTratamento" cols="30" rows="10" placeholder="Tratamento..."></textarea>
+            </div>
+            <input type="button" value="Cadastrar!" id="btCadastrar">
+        </div>
+
+    </div>
+    <script src="statusChange.js"></script>
+    <script src="cadastrar.js"></script>
+</body>
+</html>
