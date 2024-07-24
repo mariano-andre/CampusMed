@@ -17,9 +17,11 @@ app.use(express.static(__dirname + '/public'));
 
 // ROTAS
 app.get('/cadastrar', (req, res)=>{
-    res.sendFile(path.join(__dirname, 'public/index.html'));
+    res.sendFile(path.join(__dirname, 'public/cadastro/index.html'));
 })
-
+app.get('/buscar', (req, res)=>{
+    res.sendFile(path.join(__dirname, 'public/busca/index.html'));
+})
 app.get('/prontuarios', ProntuarioController.index);
 app.get('/prontuarios/:nome', ProntuarioController.show);
 app.post('/prontuarios', ProntuarioController.store);

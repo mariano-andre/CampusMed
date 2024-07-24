@@ -13,7 +13,6 @@ class AlunoRepository{
                     return resolve(rows);
                 }
             })
-
         })
     }
 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Prontuários</title>
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/busca/busca.css">
+    <link rel="stylesheet" href="/geral.css">
+    <style>
+        /* Aqui ficarão os estilos adicionais, se necessário */
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="header">
+            <div class="header-title">Buscar prontuários</div>
+        </div>
+        <div class="search-section">
+            <div class="input-fields">
+                <span class="search-label">Nome do paciente:</span>
+                <input type="text" class="name-input">
+                <span class="or-label">ou</span>
+                <span class="patient-id-label">Matrícula do paciente:</span>
+                <input type="text" class="id-input">
+            </div>
+            <div class="button-container">
+                <button class="search-button" id="btBuscar">Buscar</button>
+            </div>
+        </div>
+        <div class="patient-info-section">
+            <table class="patient-details">
+                <thead>
+                    <tr>
+                        <th class="patient-details-header">Nome</th>
+                        <th class="last-visit-label">Último atendimento</th>
+                        <th class="registered-visits-label">Atendimentos registrados</th>
+                        <th class="patient-id-section">Matrícula</th>
+                    </tr>
+                </thead>
+                <tbody id="tbInfos">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="/busca/busca.js"></script>
+</body>
+
+</html>

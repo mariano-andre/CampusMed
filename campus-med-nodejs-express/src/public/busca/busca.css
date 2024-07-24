@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  background-color: #151515;
+  color: #fff;
+}
+
+.main-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header {
+  width: 100vw;
+  background-color: rgba(30, 30, 30, 1);
+  padding: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.header img{
+  width: 50px;
+}
+
+.header-title {
+  color: rgba(255, 255, 255, 1);
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 0 0 20px;
+}
+
+.search-section {
+  width: 100%;
+  max-width: 1200px;
+  background-color: rgba(30, 30, 30, 1);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-fields {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px; /* Espaçamento entre campos de entrada e botão */
+}
+
+.search-label,
+.patient-id-label,
+.or-label {
+  color: rgba(255, 255, 255, 1);
+  font-size: 18px;
+  font-weight: normal;
+  margin-bottom: 10px;
+  flex: 1 0 auto;
+}
+
+.name-input,
+.id-input {
+  width: calc(50% - 10px);
+  height: 40px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.or-label {
+  flex-basis: 100%;
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.search-button {
+  width: 120px;
+  height: 40px;
+  background-color: #4294A6;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #327a89;
+}
+
+.patient-info-section {
+  width: 100%;
+  max-width: 1200px;
+  background-color: rgba(30, 30, 30, 1);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.patient-details {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 50px;
+  background-color: rgba(69, 69, 69, 1);
+}
+
+.patient-details th,
+.patient-details td {
+  padding: 10px;
+  text-align: left;
+  color: rgba(255, 255, 255, 1);
+}
+
+.patient-details th {
+  background-color: #454545;
+  font-size: 18px;
+  font-weight: normal;
+  border: 1px solid #222222;
+}
+
+.patient-details td {
+  font-size: 16px;
+  border: 1px solid #454545;
+  background-color: #1F1F1F;
+}
+
+.patient-details-header,
+.last-visit-label,
+.registered-visits-label,
+.patient-id-section {
+  background-color: rgba(69, 69, 69, 1);
+}
