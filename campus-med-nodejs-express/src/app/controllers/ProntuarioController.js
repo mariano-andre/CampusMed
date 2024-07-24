@@ -14,6 +14,7 @@ class ProntuarioController {
         res.json(row);
     }
 
+    
     async store(req, res){
         const pront = req.body;
         const matricula = pront.matricula;

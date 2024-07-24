@@ -16,11 +16,11 @@ conexao.connect();
  * @param {string} mensagemReject mensagem a ser exibida em caso de reject
  * @returns objeto da Promise
  */
-const consulta = (sql, valores='', mensagemReject) =>{
+export const consulta = (sql, valores='', mensagemReject) =>{
     return new Promise((resolve, reject) =>{
         conexao.query(sql, valores, (err, result)=>{
             if(err){
-                return reject(mensagemReject)
+                return reject(mensagemReject);
             }else{
                 const rows = JSON.parse(JSON.stringify(result));
                 return resolve(rows);
