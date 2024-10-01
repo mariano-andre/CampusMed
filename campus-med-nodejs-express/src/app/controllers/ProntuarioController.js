@@ -9,11 +9,16 @@ class ProntuarioController {
     }
   
     async show(req, res){
-        const nome = req.params.nome;
-        const row = await ProntuarioRepository.findByName(nome);
+        const matricula = req.params.matricula;
+        const row = await ProntuarioRepository.findByName(matricula);
         res.json(row);
     }
 
+    async count(req, res){
+        const matricula = req.params.matricula;
+        const row = await ProntuarioRepository.countByMatricula(matricula);
+        res.json(row);
+    }
     
     async store(req, res){
         const pront = req.body;

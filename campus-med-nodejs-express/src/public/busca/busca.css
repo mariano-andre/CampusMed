@@ -1,35 +1,3 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-size: 14px;
-  font-family: 'Inter', sans-serif;
-  background-color: #151515;
-  color: #fff;
-}
-
-.main-container {
-  width: 100%;
-  min-height: 100vh;
-  padding: 0 20px 20px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.header {
-  width: 100vw;
-  background-color: rgba(30, 30, 30, 1);
-  padding: 15px;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-}
-
 .header img{
   width: 50px;
 }
@@ -43,7 +11,7 @@ body {
 }
 
 .search-section {
-  width: 100%;
+  width: 90%;
   max-width: 1200px;
   background-color: rgba(30, 30, 30, 1);
   padding: 15px;
@@ -63,31 +31,14 @@ body {
   margin-bottom: 10px; /* Espaçamento entre campos de entrada e botão */
 }
 
-.search-label,
-.patient-id-label,
-.or-label {
+
+/* ÁREA DE BUSCA */
+.search-label{
   color: rgba(255, 255, 255, 1);
   font-size: 18px;
   font-weight: normal;
   margin-bottom: 10px;
   flex: 1 0 auto;
-}
-
-.name-input,
-.id-input {
-  width: calc(50% - 10px);
-  height: 40px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.or-label {
-  flex-basis: 100%;
 }
 
 .button-container {
@@ -114,7 +65,7 @@ body {
 }
 
 .patient-info-section {
-  width: 100%;
+  width: 90%;
   max-width: 1200px;
   background-color: rgba(30, 30, 30, 1);
   padding: 15px;
@@ -124,7 +75,6 @@ body {
 .patient-details {
   width: 100%;
   border-collapse: collapse;
-  border-radius: 50px;
   background-color: rgba(69, 69, 69, 1);
 }
 

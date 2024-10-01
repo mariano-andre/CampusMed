@@ -28,6 +28,31 @@ btCadastrar.addEventListener('click', ()=>{
         HDA: HDA,
         tratamento: tratamento
     };
+
+    const aluno = {
+        matricula: matricula,
+        nomeCompleto: nomeCompleto
+    };
+
+    fetch('/alunos', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(aluno),
+    })
+    .then((response) => {
+        if(!response.ok) {
+            throw new Error('Erro ao cadastrar aluno!')
+        }
+        return response.json();
+    })
+    .then((data) => {
+        console.log('Aluno cadastrado com sucesso!');
+    })
+    .catch((error) => {
+        console.error('Erro:', error)
+    })
     
     fetch('/prontuarios', {
         method: 'POST',
@@ -48,4 +73,5 @@ btCadastrar.addEventListener('click', ()=>{
     .catch((error) => {
         console.error('Erro:', error)
     })
+
 })

@@ -1,85 +1,5 @@
-/* GLOBAL */
-
-
-:root{
-    --perfil: 110px;
-    --sidebar: 200px
-}
-
-::placeholder{
-    font-size: 14px;
-    font-style: italic;
-}
-
-/* SIDEBAR */
-.sidebar{
-    position: fixed;
-    left: 0;
-    background: #1F1F1F;
-    width: var(--sidebar);
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 80px 0;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.sidebar h1{
-    text-align: center;
-    font-size: 25px;
-}
-.perfil-status{
-    width: var(--perfil);
-    height: var(--perfil);
-}
-.perfil-img{
-    background: #fff;
-    width: var(--perfil);
-    height: var(--perfil);
-    border-radius: 50%;
-}
-
-.status-outer{
-    position: relative;
-    left: calc(var(--perfil) - var(--perfil) / 3);
-    top: calc(var(--perfil) - var(--perfil) / 3);
-    background: #1F1F1F;
-    width: calc(var(--perfil) / 3);
-    height: calc(var(--perfil) / 3);
-    border-radius: 50%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.status-inner{
-    background: #7AB14F;
-    width: 70%;
-    height: 70%;
-    border-radius: 50%;
-}
-
-.menu-status{
-    height: 55%;
-    width: 80%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.menu-status select{
-    width: 100%;
-    font-size: 16px;
-    padding: 0 0 0 10px;
-}
-.menu-status option{
-    padding: 0 0 0 10px;
-}
-
 /* ÁREA DE CADASTRO */
+
 .cadastro{
     background: #1F1F1F;
     margin: 30px 30px 0px calc(var(--sidebar) + 30px);
@@ -112,23 +32,6 @@
     width: 35%;
     display: flex;
     justify-content: space-between;
-}
-
-input[type="text"], input[type="time"]{
-    padding: 10px;
-    height: 20px;
-}
-textarea, input[type="text"]{
-    border: 1px solid #A1A1A1;
-
-    padding: 10px;
-    width: min(300px, 60%);
-    border-radius: 5px;
-} textarea:focus, input[type="text"]:focus{
-    outline: 0px none transparent;
-}
-textarea:focus::placeholder, input[type="text"]:focus::placeholder{
-    font-size: 0px;
 }
 
 @media (max-width: 800px){

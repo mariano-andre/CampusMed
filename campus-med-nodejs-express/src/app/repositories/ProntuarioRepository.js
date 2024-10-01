@@ -1,4 +1,4 @@
-import { consulta } from "../database/conexao.js";
+import conexao, { consulta } from "../database/conexao.js";
 
 class ProntuarioRepository{
     // CRUD
@@ -17,9 +17,25 @@ class ProntuarioRepository{
         return consulta(sql, [], 'Não foi possível encontrar prontuários.')
     }
 
-    findByName(nome){
-        const sql = `SELECT * FROM prontuarios WHERE idAluno in ( SELECT idAluno FROM alunos WHERE nomeCompleto LIKE ? );`;
-        return consulta(sql, `%${nome}%`, 'Não foi possível obter um prontuário de um aluno com este nome.');
+    findByName(matricula){
+        const sql = `SELECT dataConsulta, inicioAtendimento FROM prontuarios 
+        WHERE idAluno IN(
+        	SELECT idAluno FROM alunos 
+        	WHERE matricula LIKE ?
+        ) ORDER BY dataConsulta, inicioAtendimento DESC
+        LIMIT 1;`
+        return consulta(sql, `%${matricula}%`, 'Não foi possível identificar a última consulta deste aluno.')
+    }
+
+    countByMatricula(matricula){
+        const sql = `SELECT COUNT(idProntuario)
+                FROM prontuarios
+                WHERE idAluno
+                IN (
+                    SELECT idAluno FROM alunos 
+                    WHERE matricula LIKE ?
+                )`
+        return consulta(sql, `%${matricula}%`, 'Não foi possível contar a quantidade de consultas realizadas.')
     }
 
     update(prontuario, idProntuario){

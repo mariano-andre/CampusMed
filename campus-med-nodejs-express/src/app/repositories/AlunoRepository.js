@@ -3,8 +3,12 @@ import { consulta } from "../database/conexao.js";
 class AlunoRepository{
     // CRUD
     create(matricula, nomeCompleto){
-        const sql = `INSERT INTO ALUNOS (matricula, nomeCompleto) VALUES (?, ?)`;
-        return consulta(sql, [matricula, nomeCompleto], 'Não foi possível cadastrar o aluno.')
+        const sql = `INSERT INTO alunos(matricula, nomeCompleto)
+        SELECT ?, ?
+        WHERE NOT EXISTS(
+        	SELECT * FROM alunos WHERE matricula = ?
+        );`;
+        return consulta(sql, [matricula, nomeCompleto, matricula], 'Não foi possível cadastrar o aluno.')
     }
 
     findAll(){
@@ -13,8 +17,8 @@ class AlunoRepository{
     }
 
     findByName(nome){
-        const sql = 'SELECT * FROM alunos WHERE nomeCompleto LIKE ? ;';
-        return consulta(sql, `%${nome}%`, 'Não foi possível obter um aluno com este nome.')
+        const sql = 'SELECT * FROM alunos WHERE nomeCompleto LIKE ? OR matricula LIKE ? ORDER BY nomeCompleto ASC;';
+        return consulta(sql, [`%${nome}%`, `%${nome}%`], 'Não foi possível obter um aluno com este nome.')
     }
 
     update(aluno, idAluno){

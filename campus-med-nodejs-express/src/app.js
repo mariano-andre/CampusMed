@@ -3,11 +3,11 @@ import routes from './routes.js';
 
 const app = express();
 
-// usar o router
-app.use(routes)
-
 // indicar para o express ler body com json
 app.use(express.json());
+
+// usar o router
+app.use(routes);
 
 
 // ENTREGA O FRONT-END
