@@ -216,3 +216,45 @@ textarea:focus::placeholder, input[type="text"]:focus::placeholder{
 .main-container h1{
     text-align: center;
 }
+
+.msg-span{
+    position: fixed;
+    width: fit-content;
+    padding: 0 5px;
+    border-radius: 2px;
+}
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.2s, 0.2s linear;
+  }
+
+
+/* TABELAS */
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    background-color: rgba(69, 69, 69, 1);
+}
+  
+table th,
+table td {
+    padding: 10px;
+    text-align: left;
+    color: rgba(255, 255, 255, 1);
+}
+  
+table th {
+    background-color: #454545;
+    font-size: 18px;
+    font-weight: normal;
+    border: 1px solid #222222;
+}
+  
+table td {
+    font-size: 16px;
+    border: 1px solid #454545;
+    background-color: #1F1F1F;
+}
+  

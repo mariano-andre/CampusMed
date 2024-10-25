@@ -6,6 +6,7 @@ const inHDA = document.getElementById('inHDA');
 const inTratamento = document.getElementById('inTratamento');
 const btCadastrar = document.getElementById('btCadastrar');
 
+
 btCadastrar.addEventListener('click', ()=>{
     const agora = new Date();
     const ano = agora.getFullYear();
@@ -29,6 +30,14 @@ btCadastrar.addEventListener('click', ()=>{
         tratamento: tratamento
     };
 
+    document.querySelectorAll('input[type="time"], input[type="text"], textarea').forEach(e => {
+        if(e.value == ''){
+            e.focus();
+            showMsg('Preencha todos os campos.', 1500, 'rgb(206, 41, 41)');
+            throw new Error('Preencha todos os campos.')
+        }
+    })
+
     const aluno = {
         matricula: matricula,
         nomeCompleto: nomeCompleto
@@ -48,10 +57,11 @@ btCadastrar.addEventListener('click', ()=>{
         return response.json();
     })
     .then((data) => {
-        console.log('Aluno cadastrado com sucesso!');
+        return showMsg('Prontuário cadastrado com sucesso!', 1500, 'green')
     })
     .catch((error) => {
         console.error('Erro:', error)
+        showMsg('Erro ao cadastrar prontuário!', 1500, 'rgb(206, 41, 41)')
     })
     
     fetch('/prontuarios', {
@@ -73,5 +83,18 @@ btCadastrar.addEventListener('click', ()=>{
     .catch((error) => {
         console.error('Erro:', error)
     })
-
 })
+
+
+// FUNÇÃO QUE EXIBE MENSAGEM DE ERRO
+const showMsg = (msg, time, color) =>{
+    const msgError = document.querySelector('.msg-span')
+    msgError.classList.remove('hidden');
+    msgError.style.background = color
+
+    msgError.textContent = msg;
+
+    setTimeout(() => {
+        msgError.classList.add('hidden')
+    }, time);
+}

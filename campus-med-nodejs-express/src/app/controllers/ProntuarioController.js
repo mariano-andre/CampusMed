@@ -1,4 +1,3 @@
-import conexao from "../database/conexao.js";
 import ProntuarioRepository from "../repositories/ProntuarioRepository.js";
 
 class ProntuarioController {

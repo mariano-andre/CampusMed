@@ -1,6 +1,6 @@
 const btBuscar = document.getElementById('btBuscar');
 const tbInfos = document.getElementById('tbInfos');
-const inNome = document.getElementById('inNome')
+const inNome = document.getElementById('inNome');
 
 class Aluno{
     constructor(_nome, _ultimoAtendimento, _atendimentosRegistrados, _matricula, _id){
@@ -16,6 +16,11 @@ const getAlunos = () =>{
     const nome = matricula = inNome.value;
     const alunos = [];
 
+    if(nome == ''){
+        tbInfos.innerHTML = '';
+    }
+
+
     fetch(`/alunos/${nome}/${matricula}`, {
         method: 'GET',
         headers: {
@@ -24,7 +29,8 @@ const getAlunos = () =>{
     })
     .then((response) => {
         if(!response.ok) {
-            throw new Error('Erro ao buscar Alunos!')
+            showMsg('Digite um nome ou matrícula para buscar!', 1500)
+            throw new Error('Erro ao buscar Alunos!');
         }
         return response.json();
     })
@@ -85,13 +91,29 @@ const getAlunos = () =>{
         }
 
         tbInfos.innerHTML = '';
+
+        if(alunos.length == 0){
+            return showMsg('Não foi possível encontrar aluno com esse nome ou matrícula!', 1500)
+        }
+        
     
+        let numAluno = 0;
         alunos.forEach(aluno => {
             const newTr = document.createElement('tr');
+            newTr.classList.add(numAluno);
+            numAluno++
         
             for(let att in aluno){
-                att!='id' ? (newTr.innerHTML += `<td>${aluno[att]}</td>`) : (newTr.innerHTML += `<td style="display: none">${aluno[att]}</td>`);
+                att!='id' ? (newTr.innerHTML += `<td>${aluno[att]}</td>`) : (newTr.innerHTML += `<td class="id" style="display: none">${aluno[att]}</td>`);
             }
+
+            // EXIBE OS PRONTUÁRIOS QUANDO O ALUNO É CLICADO
+            newTr.addEventListener('click', ()=>{
+                const matricula = newTr.childNodes[3].textContent;
+                console.log(matricula);
+                
+                window.location = `/aluno/aluno.html?matricula=${matricula}`
+            })
         
             tbInfos.appendChild(newTr);
         })
@@ -108,3 +130,16 @@ btBuscar.addEventListener('click', ()=> {
 inNome.addEventListener('keypress', (e)=>{
     e.key == 'Enter' ? getAlunos() : [];
 })
+
+
+// FUNÇÃO QUE EXIBE MENSAGEM DE ERRO
+const showMsg = (msg, time) =>{
+    const msgError = document.querySelector('.msg-span')
+    msgError.classList.remove('hidden');
+
+    msgError.textContent = msg;
+
+    setTimeout(() => {
+        msgError.classList.add('hidden')
+    }, time);
+}

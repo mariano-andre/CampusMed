@@ -18,12 +18,11 @@ class ProntuarioRepository{
     }
 
     findByName(matricula){
-        const sql = `SELECT dataConsulta, inicioAtendimento FROM prontuarios 
+        const sql = `SELECT * FROM prontuarios 
         WHERE idAluno IN(
         	SELECT idAluno FROM alunos 
         	WHERE matricula LIKE ?
-        ) ORDER BY dataConsulta, inicioAtendimento DESC
-        LIMIT 1;`
+        ) ORDER BY dataConsulta, inicioAtendimento DESC;`
         return consulta(sql, `%${matricula}%`, 'Não foi possível identificar a última consulta deste aluno.')
     }
 

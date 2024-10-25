@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar Atendimento</title>
-    <link rel="stylesheet" type="text/css" href="/cadastro/cadastro.css">
+    <title>Document</title>
     <link rel="stylesheet" href="/geral.css">
+    <style>
+        #outNome{
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
     <div class="sidebar">
@@ -38,42 +42,19 @@
         </div>
     </div>
 
-
-
-    <div class="cadastro">
-        <span class="msg-span"></span>
-        <h1>Cadastrar novo atendimento</h1>
-
-        <div class="formulario">
-            <div class="componente-cadastro align-center">
-                <p>Horário do atendimento:</p>
-                <div class="horario align-center">
-                    <input type="time" id="timeInicioAtendimento">
-                    <label for="timeFimAtendimento">até</label>
-                    <input type="time" id="timeFimAtendimento">
-                </div>
-            </div>
-            <div class="componente-cadastro">            
-                <label for="inNomeAluno">Nome do Aluno:</label>
-                <input type="text" id="inNomeAluno" placeholder="Insira o nome..." maxlength="100">
-            </div>  
-            <div class="componente-cadastro">            
-                <label for="inMatriculaAluno">Matrícula do Aluno:</label>
-                <input type="text" id="inMatriculaAluno" placeholder="Insira a matrícula..." maxlength="14">
-            </div>  
-            <div class="componente-cadastro">            
-                <label for="inHDA">Histórico da doença atual:</label>
-                <textarea id="inHDA" cols="30" rows="10" placeholder="HDA..." maxlength="400"></textarea>
-            </div>
-            <div class="componente-cadastro no-border">            
-                <label for="inTratamento">Tratamento:</label>
-                <textarea id="inTratamento" cols="30" rows="10" placeholder="Tratamento..." maxlength="400"></textarea>
-            </div>
-            <input type="button" value="Cadastrar!" id="btCadastrar">
-        </div>
-
+    <div class="main-container">
+        <h2 id="outNome"></h2>
+        <table id="tbPronts">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Início/fim</th>
+                    <th>HDA</th>
+                    <th>Tratamento</th>
+                </tr>
+            </thead>
+        </table>
     </div>
-    <script src="/statusChange.js"></script>
-    <script src="/cadastro/cadastrar.js"></script>
+    <script src="aluno.js"></script>
 </body>
 </html>

@@ -42,6 +42,7 @@
     </div>
 
     <div class="main-container">
+        <span class="msg-span"></span>
         <div class="header">
             <div class="header-title">Buscar prontuários</div>
         </div>
@@ -54,21 +55,20 @@
                 <button class="search-button" id="btBuscar">Buscar</button>
             </div>
         </div>
-        <div class="patient-info-section">
-            <table class="patient-details">
+            <table>
                 <thead>
                     <tr>
-                        <th class="patient-details-header">Nome</th>
-                        <th class="last-visit-label">Último atendimento</th>
-                        <th class="registered-visits-label">Atendimentos registrados</th>
-                        <th class="patient-id-section">Matrícula</th>
+                        <th class="details">Nome</th>
+                        <th class="details">Último atendimento</th>
+                        <th class="details">Atendimentos registrados</th>
+                        <th class="details">Matrícula</th>
                     </tr>
                 </thead>
                 <tbody id="tbInfos">
                 </tbody>
             </table>
-        </div>
     </div>
+    
     <script src="/busca/busca.js"></script>
     <script src="/statusChange.js"></script>
 </body>

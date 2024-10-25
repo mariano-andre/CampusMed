@@ -71,36 +71,3 @@
   padding: 15px;
   border-radius: 10px;
 }
-
-.patient-details {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: rgba(69, 69, 69, 1);
-}
-
-.patient-details th,
-.patient-details td {
-  padding: 10px;
-  text-align: left;
-  color: rgba(255, 255, 255, 1);
-}
-
-.patient-details th {
-  background-color: #454545;
-  font-size: 18px;
-  font-weight: normal;
-  border: 1px solid #222222;
-}
-
-.patient-details td {
-  font-size: 16px;
-  border: 1px solid #454545;
-  background-color: #1F1F1F;
-}
-
-.patient-details-header,
-.last-visit-label,
-.registered-visits-label,
-.patient-id-section {
-  background-color: rgba(69, 69, 69, 1);
-}
